@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external GetUsersRating extends SQLQuery<SQLConfiguration> {
+SELECT rating FROM users WHERE id = #[id]<int>
+}

@@ -1,0 +1,10 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external CodeUploadedQuery extends SQLQuery<SQLConfiguration> {
+select distinct id from examj.code_uploaded 
+where date = #[date]<java.lang.String>
+and examiner = #[examiner]<java.lang.String>
+}

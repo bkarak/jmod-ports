@@ -1,0 +1,15 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertBidsQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO bids 
+VALUES (NULL,
+		#[userId]<int>,
+		#[itemId]<int>,
+		#[qty]<int>,
+		#[bid]<float>,
+		#[max_bid]<float>,
+		#[now]<java.util.Date>)
+}

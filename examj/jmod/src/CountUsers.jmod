@@ -1,0 +1,8 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external CountUsers extends SQLQuery<SQLConfiguration> {
+select count(*) from examj.users where username = #[username]<java.lang.String> and password = md5(#[password]<java.lang.String>)
+}

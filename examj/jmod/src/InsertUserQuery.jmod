@@ -1,0 +1,13 @@
+package examj;
+
+import org.jmod.dsl.sql.SQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertUserQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO examj.users(name,surname,email,username,password) 
+VALUES(#[name]<java.lang.String>, 
+       #[surname]<java.lang.String>,
+       #[email]<java.lang.String>,
+       #[username]<java.lang.String>,
+       md5(#[password]<java.lang.String>))
+}

@@ -1,0 +1,20 @@
+package com.sun.demo.addressbook.db;
+
+import org.jmod.dsl.sql.SQLConfiguration;
+import org.jmod.dsl.sql.SQLQuery;
+
+public external UpdateAddressQuery extends SQLQuery<SQLConfiguration> {
+UPDATE APP.ADDRESS
+        SET LASTNAME = #[lastname]<java.lang.String>,
+            FIRSTNAME = #[firstname]<java.lang.String>,
+            MIDDLENAME = #[middlename]<java.lang.String>,
+            PHONE = #[phone]<java.lang.String>,
+            EMAIL = #[email]<java.lang.String>,
+            ADDRESS1 = #[address1]<java.lang.String>,
+            ADDRESS2 = #[address2]<java.lang.String>,
+            CITY = #[city]<java.lang.String>,
+            STATE = #[state]<java.lang.String>,
+            POSTALCODE = #[postalcode]<java.lang.String>,
+            COUNTRY = #[country]<java.lang.String>
+WHERE ID = #[id]<int>
+}

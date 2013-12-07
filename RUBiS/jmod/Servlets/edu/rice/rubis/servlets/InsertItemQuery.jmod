@@ -1,0 +1,19 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertItemQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO items 
+VALUES (NULL,
+		#[name]<java.lang.String>,
+		#[description]<java.lang.String>,
+		#[initial_price]<float>,
+		#[quantity]<int>,
+		#[reserve_price]<float>,
+		#[buy_now]<float>,
+		#[start_date]<java.util.Date>,
+		#[end_date]<java.util.Date>,
+		#[user_id]<int>,
+		#[category_id]<int>)
+}

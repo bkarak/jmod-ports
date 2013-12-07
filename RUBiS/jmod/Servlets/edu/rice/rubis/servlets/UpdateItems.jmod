@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external UpdateItems extends SQLQuery<SQLConfiguration> {
+UPDATE items SET max_bid = #[max_bid]<float>, nb_of_bids = #[nobids]<int> WHERE id = #[id]<int>
+}

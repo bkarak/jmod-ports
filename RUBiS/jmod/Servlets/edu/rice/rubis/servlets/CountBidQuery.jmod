@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external CountBidQuery extends SQLQuery<SQLConfiguration> {
+SELECT COUNT(*) AS bid FROM bids WHERE item_id = #[id]<int>
+}

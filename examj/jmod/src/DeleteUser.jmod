@@ -1,0 +1,8 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external DeleteUser extends SQLQuery<SQLConfiguration> {
+DELETE FROM examj.users WHERE username = #[username]<java.lang.String>
+}

@@ -1,0 +1,19 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertCodeQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO code_uploaded (date, time, name, surname, id, group, prj_name, lang, code, examiner, uuid) 
+VALUES(#[date]<java.lang.String>,
+       #[time]<java.lang.String>,
+       #[name]<java.lang.String>,
+       #[surname]<java.lang.String>,
+       #[id]<java.lang.String>,
+       #[group]<java.lang.String>,
+       #[prj_name]<java.lang.String>,
+       #[lang]<java.lang.String>,
+       #[code]<java.lang.String>,
+       #[examiner]<java.lang.String>,
+       #[uuid]<java.lang.String>)
+}

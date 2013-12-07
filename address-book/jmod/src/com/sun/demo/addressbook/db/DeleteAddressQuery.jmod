@@ -1,0 +1,8 @@
+package com.sun.demo.addressbook.db;
+
+import org.jmod.dsl.sql.SQLConfiguration;
+import org.jmod.dsl.sql.SQLQuery;
+
+public external DeleteAddressQuery extends SQLQuery<SQLConfiguration> {
+DELETE FROM APP.ADDRESS WHERE ID = #[id]<int>
+}

@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external GetUsersNickname2 extends SQLQuery<SQLConfiguration> {
+SELECT id, creation_date FROM users WHERE nickname = #[nickname]<java.lang.String>
+}

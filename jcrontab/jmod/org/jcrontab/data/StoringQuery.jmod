@@ -1,0 +1,19 @@
+package org.jcrontab.data;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external StoringQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO events(id, second, minute, hour, dayofmonth, month, dayofweek, year, task, extrainfo, businessDays)
+VALUES(#[id]<int>, 
+       #[second]<java.lang.String>, 
+       #[minute]<java.lang.String>, 
+       #[hour]<java.lang.String>,
+       #[dom]<java.lang.String>,
+       #[month]<java.lang.String>,
+       #[dow]<java.lang.String>,
+       #[year]<java.lang.String>,
+       #[task]<java.lang.String>,
+       #[extrainfo]<java.lang.String>,
+       #[businessDays]<boolean>)
+}

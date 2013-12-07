@@ -1,0 +1,8 @@
+package org;
+
+import org.jmod.dsl.regex.Regex;
+import org.jmod.dsl.regex.RegexConfiguration;
+
+public external EscapeCharRegex extends Regex<RegexConfiguration> {
+\\'(?:.|[\\n\\r])*?\\'
+}

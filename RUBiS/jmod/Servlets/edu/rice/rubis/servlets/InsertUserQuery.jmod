@@ -1,0 +1,17 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertUserQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO users 
+VALUES (NULL,
+	    #[firstname]<java.lang.String>,
+		#[lastname]<java.lang.String>,
+		#[nickname]<java.lang.String>,
+		#[password]<java.lang.String>,
+		#[email]<java.lang.String>, 
+		0, 0,
+		#[now]<java.util.Date>,
+		#[region_id]<int>)
+}

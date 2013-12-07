@@ -1,0 +1,15 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external CommentsQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO comments 
+VALUES (NULL,
+		#[fromId]<int>,
+		#[toId]<int>,
+		#[itemId]<int>,
+		#[rating]<int>,
+		#[now]<java.util.Date>,
+		#[comment]<java.lang.String>)
+}

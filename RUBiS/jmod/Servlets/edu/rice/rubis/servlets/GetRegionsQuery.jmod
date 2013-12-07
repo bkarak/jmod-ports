@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external GetRegionsQuery extends SQLQuery<SQLConfiguration> {
+SELECT id FROM regions WHERE name = #[name]<java.lang.String>
+}

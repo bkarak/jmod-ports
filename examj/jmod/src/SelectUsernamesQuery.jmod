@@ -1,0 +1,8 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external SelectUsernamesQuery extends SQLQuery<SQLConfiguration> {
+select username from examj.users
+}

@@ -1,0 +1,8 @@
+package com.sun.demo.addressbook.db;
+
+import org.jmod.dsl.sql.SQLConfiguration;
+import org.jmod.dsl.sql.SQLQuery;
+
+public external GetListEntriesQuery extends SQLQuery<SQLConfiguration> {
+SELECT ID, LASTNAME, FIRSTNAME, MIDDLENAME FROM APP.ADDRESS ORDER BY LASTNAME ASC
+}

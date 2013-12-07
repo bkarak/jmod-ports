@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external UpdateItems3 extends SQLQuery<SQLConfiguration> {
+UPDATE items SET end_date = #[end_date]<java.util.Date>, quantity = #[quantity]<int> WHERE id = #[id]<int>
+}

@@ -1,0 +1,8 @@
+package org.jcrontab.data;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external NextSequenceQuery extends SQLQuery<SQLConfiguration> {
+SELECT MAX(id) id FROM EVENTS
+}

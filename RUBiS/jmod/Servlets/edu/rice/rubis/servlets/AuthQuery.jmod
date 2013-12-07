@@ -1,0 +1,9 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external AuthQuery extends SQLQuery<SQLConfiguration> {
+SELECT users.id FROM users 
+WHERE nickname= #[nickname]<java.lang.String> AND password= #[password]<java.lang.String>
+}

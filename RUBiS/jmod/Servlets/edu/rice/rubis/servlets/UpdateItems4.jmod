@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external UpdateItems4 extends SQLQuery<SQLConfiguration> {
+UPDATE items SET quantity = #[quantity]<int> WHERE id = #[id]<int>
+}

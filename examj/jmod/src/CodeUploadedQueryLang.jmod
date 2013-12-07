@@ -1,0 +1,10 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external CodeUploadedQueryLang extends SQLQuery<SQLConfiguration> {
+select lang, code from examj.code_uploaded 
+where date = #[date]<java.lang.String> and id = #[id]<java.lang.String>
+and prj_name = #[prj_name]<java.lang.String>
+}

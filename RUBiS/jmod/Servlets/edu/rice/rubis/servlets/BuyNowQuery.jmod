@@ -1,0 +1,13 @@
+package edu.rice.ruby.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external BuyNowQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO buy_now 
+VALUES (NULL,
+		#[user_id]<int>,
+		#[item_id]<int>,
+		#[quantity]<int>,
+		#[now]<java.util.Date>)
+}

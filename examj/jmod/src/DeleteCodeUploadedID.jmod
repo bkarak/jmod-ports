@@ -1,0 +1,10 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external DeleteCodeUploadedPrjName extends SQLQuery<SQLConfiguration> {
+DELETE from examj.code_uploaded 
+where date = #[date]<java.lang.String>
+and id = #[id]<java.lang.String>
+}

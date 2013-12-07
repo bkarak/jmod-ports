@@ -1,0 +1,19 @@
+package com.sun.demo.addressbook.db;
+
+import org.jmod.dsl.sql.SQLConfiguration;
+import org.jmod.dsl.sql.SQLQuery;
+
+public external SaveAddressQuery extends SQLQuery<SQLConfiguration> {
+INSERT INTO APP.ADDRESS (LASTNAME, FIRSTNAME, MIDDLENAME, PHONE, EMAIL, ADDRESS1, ADDRESS2, CITY, STATE, POSTALCODE, COUNTRY)
+VALUES (#[lastname]<java.lang.String>,
+        #[firstname]<java.lang.String>,
+        #[middlename]<java.lang.String>,
+        #[phone]<java.lang.String>,
+        #[email]<java.lang.String>,
+        #[address1]<java.lang.String>,
+        #[address2]<java.lang.String>,
+        #[city]<java.lang.String>,
+        #[state]<java.lang.String>,
+        #[postalcode]<java.lang.String>,
+        #[country]<java.lang.String>)
+}

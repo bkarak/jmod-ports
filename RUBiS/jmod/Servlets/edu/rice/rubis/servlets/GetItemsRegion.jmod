@@ -1,0 +1,10 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external GetItemsRegion extends SQLQuery<SQLConfiguration> {
+SELECT items.name, items.id, items.end_date, items.max_bid, items.nb_of_bids, items.initial_price FROM items,users 
+WHERE items.category= #[category]<int> AND items.seller=users.id AND users.region= #[region]<int> AND end_date>=NOW() 
+ORDER BY items.end_date ASC LIMIT #[lower]<int>, #[higher]<int>
+}

@@ -1,0 +1,8 @@
+package examj;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external DataExaminerQuery extends SQLQuery<SQLConfiguration> {
+select distinct date from examj.code_uploaded where examiner = #[examiner]<java.lang.String>
+}

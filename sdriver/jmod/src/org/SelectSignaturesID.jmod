@@ -1,0 +1,8 @@
+package org;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external SelectSignaturesID extends SQLQuery<SQLConfiguration> {
+SELECT ID FROM signatures WHERE ID = #[id]<java.lang.String>
+}

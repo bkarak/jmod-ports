@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external UpdateUsersQuery extends SQLQuery<SQLConfiguration> {
+UPDATE users SET rating = #[rating]<int> WHERE id = #[id]<int>
+}

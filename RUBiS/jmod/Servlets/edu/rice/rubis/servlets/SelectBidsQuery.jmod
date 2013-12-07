@@ -1,0 +1,8 @@
+package edu.rice.rubis.servlets;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external SelectBidsQuery extends SQLQuery<SQLConfiguration>{
+SELECT * FROM bids WHERE item_id = #[item_id]<int> ORDER BY date DESC
+}

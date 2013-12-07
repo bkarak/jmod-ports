@@ -1,0 +1,8 @@
+package org;
+
+import org.jmod.dsl.sql.SQLQuery;
+import org.jmod.dsl.sql.SQLConfiguration;
+
+public external InsertSignatureID extends SQLQuery<SQLConfiguration> {
+INSERT INTO signatures(ID) VALUES(#[id]<java.lang.String>)
+}
