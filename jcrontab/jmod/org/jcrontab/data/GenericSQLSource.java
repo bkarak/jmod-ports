@@ -55,10 +55,6 @@ public class GenericSQLSource implements DataSource {
     /** This is the database driver being used. */
     private static Object dbDriver = null;
     private static GenericSQLSource instance;
-
-	/** This Query finds the next value in the sequence 
-     */
-    public static String nextSequence = "SELECT MAX(id) id FROM EVENTS " ;
     
     /** Creates new GenericSQLSource */
 	
