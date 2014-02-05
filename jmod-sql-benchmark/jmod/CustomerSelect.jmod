@@ -1,0 +1,5 @@
+
+
+public external CustomerSelect extends SQLQuery<SQLConfiguration> {
+select * from customer
+}
