@@ -1,5 +1,7 @@
 package org.jmod;
 
-public external CustomerSelect extends SQLQuery<SQLConfiguration> {
+import org.jmod.dsl.sql.SQLQuery;
+
+public external CustomerSelect extends SQLQuery<SimpleSQLConfiguration> {
 select * from customer
 }

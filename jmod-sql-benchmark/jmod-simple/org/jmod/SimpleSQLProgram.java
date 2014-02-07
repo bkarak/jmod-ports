@@ -6,26 +6,27 @@ import java.util.Properties;
 
 
 public class SimpleSQLProgram {
-	public static void main(String[] args) {
-		final String jdbcUrl = "jdbc:mysql://127.0.0.1/test";
+    public static void main(String[] args) {
+        final String jdbcUrl = "jdbc:mysql://localhost/test";
 
-		try {
-    		Properties connectionProps = new Properties();
-    		connectionProps.put("user", "root");
-    		connectionProps.put("password", "");
-    		Connection conn = DriverManager.getConnection(jdbcUrl, connectionProps);
-    		Statement stmnt = conn.createStatement();
-        	ResultSet rs = stmnt.executeQuery("select * from customer");
+        try {
+            Properties connectionProps = new Properties();
+            connectionProps.put("user", "root");
+            connectionProps.put("password", "root");
+            Class.forName(jdbcDriver);
+            Connection conn = DriverManager.getConnection(jdbcUrl, connectionProps);
+            PreparedStatement ps = (new CustomerSelect()).getStatement();
+            ResultSet rs = ps.executeQuery();
 
-        	while(rs.next()) {
-        		System.out.println(rs.getString("customer_name"));
-        	}
-        	
-        	rs.close();
-        	stmnt.close();
-        	conn.close();
-		} catch (Exception e) {
-			System.err.println("Ooops ... " + e.toString());
-		}
-	}
+            while(rs.next()) {
+                System.out.println(rs.getString("customer_name"));
+            }
+            
+            rs.close();
+            stmnt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println("Ooops ... " + e.toString());
+        }
+    }
 }

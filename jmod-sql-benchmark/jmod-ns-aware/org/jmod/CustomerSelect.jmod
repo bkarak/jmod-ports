@@ -5,5 +5,5 @@ import org.jmod.dsl.sql.SQLConfiguration;
 
 
 public external CustomerSelect extends SQLQuery<SQLConfiguration> {
-select * from ustomer
+select * from customer
 }
