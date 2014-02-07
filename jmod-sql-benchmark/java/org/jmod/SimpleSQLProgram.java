@@ -1,3 +1,5 @@
+package org.jmod;
+
 import java.sql.*;
 
 import java.util.Properties;
