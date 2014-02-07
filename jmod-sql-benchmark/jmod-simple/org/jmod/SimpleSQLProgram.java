@@ -18,7 +18,7 @@ public class SimpleSQLProgram {
         	ResultSet rs = stmnt.executeQuery("select * from customer");
 
         	while(rs.next()) {
-        		System.out.println(rs.getString("name"));
+        		System.out.println(rs.getString("customer_name"));
         	}
         	
         	rs.close();

@@ -11,14 +11,14 @@ public class SimpleSQLProgram {
 
 		try {
     		Properties connectionProps = new Properties();
-    		connectionProps.put("user", "test");
-    		connectionProps.put("password", "test");
+    		connectionProps.put("user", "root");
+    		connectionProps.put("password", "");
     		Connection conn = DriverManager.getConnection(jdbcUrl, connectionProps);
     		Statement stmnt = conn.createStatement();
         	ResultSet rs = stmnt.executeQuery("select * from customer");
 
         	while(rs.next()) {
-        		System.out.println(rs.getString("name"));
+        		System.out.println(rs.getString("customer_name"));
         	}
         	
         	rs.close();
