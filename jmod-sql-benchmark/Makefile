@@ -35,10 +35,25 @@ benchmark:
 		count=`expr $$count - 1` ; \
 		rm -rf work ; \
 	done
-
+	@echo 'Calculating compiler overhead (javac-compiler)'
+	@-rm -f javac-compiler.measurements
+	@count=1000 ; \
+	while [ $$count -gt 0 ] ; \
+	do \
+		{ time $(JAVA_COMPILER) java/org/jmod/SimpleSQLProgram.java ; } 2> javac-compiler.tmp ; \
+		cat javac-compiler.tmp | grep real >> javac-compiler.measurements ; \
+		rm -f javac-compiler.tmp ; \
+		count=`expr $$count - 1` ; \
+	done
 
 clean:
 	-rm -f jmod-simple.measurements
 	-rm -f jmod-simple.tmp
+	-rm -f jmod-live-database.measurements
+	-rm -f jmod-live-database.tmp
+	-rm -f jmod-ns-aware.measurements
+	-rm -f jmod-ns-aware.tmp
+	-rm -f javac-compiler.measurements
+	-rm -f javac-compiler.tmp
 	-rm -rf work
 	-rm -f velocity.log

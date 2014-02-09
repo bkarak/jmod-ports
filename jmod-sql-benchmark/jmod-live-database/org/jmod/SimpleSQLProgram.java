@@ -8,6 +8,7 @@ import java.util.Properties;
 public class SimpleSQLProgram {
     public static void main(String[] args) {
         final String jdbcUrl = "jdbc:mysql://localhost/test";
+        final String jdbcDriver = "";
 
         try {
             Properties connectionProps = new Properties();
@@ -15,7 +16,7 @@ public class SimpleSQLProgram {
             connectionProps.put("password", "root");
             Class.forName(jdbcDriver);
             Connection conn = DriverManager.getConnection(jdbcUrl, connectionProps);
-            PreparedStatement ps = (new CustomerSelect()).getStatement();
+            PreparedStatement ps = (new CustomerSelect()).getStatement(conn);
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()) {
@@ -23,7 +24,7 @@ public class SimpleSQLProgram {
             }
             
             rs.close();
-            stmnt.close();
+            ps.close();
             conn.close();
         } catch (Exception e) {
             System.err.println("Ooops ... " + e.toString());
