@@ -1,10 +1,11 @@
-JMOD_COMPILER=java -jar jmodv2.jar
+JMOD_COMPILER=java -jar jmodv2.jar -javac
 JAVA_COMPILER=javac
+ITERATIONS=1000
 
 benchmark:
 	@echo 'Calculating compiler overhead (jmod-simple)'
 	@-rm -f jmod-simple.measurements
-	@count=1000 ; \
+	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
 		{ time $(JMOD_COMPILER) -i jmod-simple ; } 2> jmod-simple.tmp ; \
@@ -15,7 +16,7 @@ benchmark:
 	done
 	@echo 'Calculating compiler overhead (jmod-live-database)'
 	@-rm -f jmod-live-database.measurements
-	@count=1000 ; \
+	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
 		{ time $(JMOD_COMPILER) -i jmod-live-database ; } 2> jmod-live-database.tmp ; \
@@ -26,7 +27,7 @@ benchmark:
 	done
 	@echo 'Calculating compiler overhead (jmod-ns-aware)'
 	@-rm -f jmod-ns-aware.measurements
-	@count=1000 ; \
+	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
 		{ time $(JMOD_COMPILER) -i jmod-ns-aware ; } 2> jmod-ns-aware.tmp ; \
@@ -37,7 +38,7 @@ benchmark:
 	done
 	@echo 'Calculating compiler overhead (javac-compiler)'
 	@-rm -f javac-compiler.measurements
-	@count=1000 ; \
+	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
 		{ time $(JAVA_COMPILER) java/org/jmod/SimpleSQLProgram.java ; } 2> javac-compiler.tmp ; \
