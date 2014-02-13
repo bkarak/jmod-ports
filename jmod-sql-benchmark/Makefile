@@ -1,6 +1,6 @@
 JMOD_COMPILER=java -jar jmodv2.jar -javac
 JAVA_COMPILER=javac
-ITERATIONS=1000
+ITERATIONS=2000
 
 benchmark:
 	@echo 'Calculating compiler overhead (jmod-simple)'
