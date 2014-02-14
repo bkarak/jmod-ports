@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class SimpleSQLProgram {
     public static void main(String[] args) {
-        final String jdbcUrl = "jdbc:mysql://localhost/test";
-        final String jdbcDriver = "";
+        final String jdbcUrl = "SDriver:jdbc:mysql://localhost/test";
+        final String jdbcDriver = "org.SDriver";
 
         try {
             Properties connectionProps = new Properties();
