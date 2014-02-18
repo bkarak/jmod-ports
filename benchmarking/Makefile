@@ -8,7 +8,6 @@ benchmark:
 	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
-		echo $$count ; \
 		{ time $(JMOD_COMPILER) -i jmod-simple ; } 2> jmod-simple.tmp ; \
 		cat jmod-simple.tmp | grep real >> jmod-simple.measurements ; \
 		rm -f jmod-simple.tmp ; \
@@ -20,7 +19,6 @@ benchmark:
 	@count=${ITERATIONS} ; \
 	while [ $$count -gt 0 ] ; \
 	do \
-		echo $$count ; \
 		{ time $(JAVA_COMPILER) java/org/jmod/SimpleSQLProgram.java ; } 2> javac-compiler.tmp ; \
 		cat javac-compiler.tmp | grep real >> javac-compiler.measurements ; \
 		rm -f javac-compiler.tmp ; \
