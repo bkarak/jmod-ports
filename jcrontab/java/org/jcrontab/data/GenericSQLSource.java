@@ -275,7 +275,7 @@ public class GenericSQLSource implements DataSource {
                         }
                     }
                     ps.setString(10 , extraInfob);
-                    ps.setBoolean(11, beans[i].getBusinessDays());
+                    ps.setString(11, String.valueOf(beans[i].getBusinessDays()));
                     ps.executeUpdate();
 		}
 	    } finally {

@@ -1,9 +1,8 @@
 package org.jcrontab.data;
 
 import org.jmod.dsl.sql.SQLQuery;
-import org.jmod.dsl.sql.SQLConfiguration;
 
-public external StoringQuery extends SQLQuery<SQLConfiguration> {
+public external StoringQuery extends SQLQuery<JcrontabSQLConfiguration> {
 INSERT INTO events(id, second, minute, hour, dayofmonth, month, dayofweek, year, task, extrainfo, businessDays)
 VALUES(#[id]<int>, 
        #[second]<java.lang.String>, 
@@ -15,5 +14,5 @@ VALUES(#[id]<int>,
        #[year]<java.lang.String>,
        #[task]<java.lang.String>,
        #[extrainfo]<java.lang.String>,
-       #[businessDays]<boolean>)
+       #[businessDays]<java.lang.String>)
 }

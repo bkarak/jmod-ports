@@ -1,8 +1,7 @@
 package org.jcrontab.data;
 
 import org.jmod.dsl.sql.SQLQuery;
-import org.jmod.dsl.sql.SQLConfiguration;
 
-public external RemovingQuery extends SQLQuery<SQLConfiguration> {
+public external RemovingQuery extends SQLQuery<JcrontabSQLConfiguration> {
 DELETE FROM events WHERE id = #[id]<int>;
 }

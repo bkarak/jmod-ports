@@ -240,7 +240,7 @@ public class GenericSQLSource implements DataSource {
 													   beans[i].getYear(),
 													   task,
 													   extraInfob,
-													   beans[i].getBusinessDays());
+													   String.valueOf(beans[i].getBusinessDays()));
 					ps = sq.getStatement(conn);
                     ps.executeUpdate();
 					ps.close();
