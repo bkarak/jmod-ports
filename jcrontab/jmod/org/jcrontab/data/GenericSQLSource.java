@@ -106,7 +106,7 @@ public class GenericSQLSource implements DataSource {
         Vector list = new Vector();
 
 		Connection conn = null;
-		java.sql.Statement st = null;
+		java.sql.PreparedStatement st = null;
 		java.sql.ResultSet rs = null;
 		try {
 			SelectAllQuery saq = new SelectAllQuery();
@@ -364,7 +364,7 @@ public class GenericSQLSource implements DataSource {
     private void addId(CrontabEntryBean bean, Connection conn) 
                                                 throws SQLException {
 		NextSequenceQuery nsq = new NextSequenceQuery();
-        java.sql.Statement st = nsq.getStatement(conn);
+        java.sql.PreparedStatement st = nsq.getStatement(conn);
 		java.sql.ResultSet rs = st.executeQuery();
 		
 		if(rs != null) {

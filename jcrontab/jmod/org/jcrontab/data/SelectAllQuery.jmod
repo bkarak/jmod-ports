@@ -2,7 +2,7 @@ package org.jcrontab.data;
 
 import org.jmod.dsl.sql.SQLQuery;
 
-public external SelectALLQuery extends SQLQuery<JcrontabSQLConfiguration> {
+public external SelectAllQuery extends SQLQuery<JcrontabSQLConfiguration> {
 SELECT id, second, minute, hour, dayofmonth, month, dayofweek, year, task, extrainfo, businessDays
 FROM events
 }
